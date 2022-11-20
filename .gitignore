@@ -1,0 +1,12 @@
+*.psd
+*.o
+.DS_Store
+*~
+.~lock*
+*.uvopt
+*.uvoptx
+*.dep
+*.bak
+*.uvgui.*
+*.uvguix.*
+.IAR/Debug/
