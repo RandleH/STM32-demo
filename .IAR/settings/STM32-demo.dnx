@@ -41,13 +41,13 @@
     <StLinkDriver>
         <stlinkserialNo>303030303030303030303031</stlinkserialNo>
         <stlinkfoundProbes />
-        <stlinkResetStyle>0</stlinkResetStyle>
-        <stlinkResetStrategy>0</stlinkResetStrategy>
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <CStepIntDis>_ 0</CStepIntDis>
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>0</stlinkResetStrategy>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>3005762506</Checksum>
+        <Checksum>790418686</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -78,9 +78,17 @@
         <ITMportsLogFile>0</ITMportsLogFile>
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
+    <struct_types>
+        <Fmt0>union &lt;Unnamed 1&gt;-data	4	0</Fmt0>
+        <Fmt1>union &lt;Unnamed 3&gt;-data	4	0</Fmt1>
+        <Fmt2>union &lt;Unnamed 5&gt;-data	4	0</Fmt2>
+    </struct_types>
+    <InterruptStripe>
+        <Sort>1</Sort>
+    </InterruptStripe>
     <Trace2>
         <Enabled>0</Enabled>
-        <ShowSource>0</ShowSource>
+        <ShowSource>1</ShowSource>
     </Trace2>
     <SWOTraceWindow>
         <PcSampling>0</PcSampling>
@@ -149,7 +157,10 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Count>0</Count>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Libraries\StartUp\system_stm32f4xx.c}.491.3" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Libraries\StartUp\system_stm32f4xx.c}.487.5" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Driver\rh_clock.cpp}.132.3" 0 0 1 "" 0 "" 0</Bp2>
+        <Count>3</Count>
     </Breakpoints2>
     <Aliases>
         <Count>0</Count>

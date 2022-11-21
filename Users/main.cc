@@ -1,46 +1,49 @@
 #include <stdio.h>
+#include <stdint.h>
 
 
-
-// #ifdef __cplusplus
-// extern "C"{
-// #endif
+#ifdef __cplusplus
+extern "C"{
+#endif
 
 static inline bool isLittleEndian(void){
     int x = 1;
     return (*((char*)&x))==1;
 }
 
-void clock_init(void){
 
 
+#ifdef __cplusplus
 }
+#endif
 
-
-// #ifdef __cplusplus
-// }
-// #endif
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_rcc.h"
+#include "rh_clock.hpp"
+#include "rh_timer.hpp"
 
 int main( int argc, char const *argv[]){
-  union{
-        struct{
-          uint32_t PLLM          : 6;
-          uint32_t PLLN          : 9;
-          uint32_t reserved15    : 1;
-          uint32_t PLLP          : 2;
-          uint32_t reserved21_18 : 4;
-          uint32_t PLLSRC        : 1;
-          uint32_t reserved23    : 1;
-          uint32_t PLLQ          : 4;
-          uint32_t reserved31_28 : 4;
-        }bit;
-        uint32_t data;
-      }PLLCFGR;
-    uint32_t CR  = 0xf0000000;
-    PLLCFGR.data = 0x00000000;
-    PLLCFGR.bit.PLLM = 25;
-    printf("%d\n", isLittleEndian());
 
+  // rh_clock__init();
+   
+  rh_clock__view();
+  /* Configure C13 pin(PC13) in output function */
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); 
+   
+  GPIO_InitTypeDef GPIO_InitStructure;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;  
+  GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+  
+  RCC_ClocksTypeDef clk_info;
+  RCC_GetClocksFreq( &clk_info);
+
+  rh_timer2__init();
+  
   while(1){
     
   }

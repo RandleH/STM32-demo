@@ -2841,6 +2841,12 @@
     </configuration>
     <group>
         <name>Driver</name>
+        <file>
+            <name>$PROJ_DIR$\..\Driver\rh_clock.cpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Driver\rh_timer.cpp</name>
+        </file>
     </group>
     <group>
         <name>Libraries</name>
@@ -2884,6 +2890,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_rcc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Libraries\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_tim.c</name>
             </file>
         </group>
     </group>
